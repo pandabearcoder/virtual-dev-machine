@@ -12,4 +12,9 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", path: "provision/setup.sh"
+
+  config.trigger.after :up do |trigger|
+    trigger.info = "IP Address"
+    trigger.run_remote = {inline: "hostname -I | cut -d' ' -f2"}
+  end
 end
