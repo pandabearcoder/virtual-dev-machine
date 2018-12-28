@@ -83,3 +83,16 @@ pip install docker-compose
 echo "====="
 echo "DONE!"
 echo "====="
+
+# Install Node9
+echo "========================"
+echo "Installing node9"
+echo "========================"
+apt update -y
+apt install -y curl
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+apt install -y nodejs
+npm install -g npm
+echo "====="
+echo "DONE!"
+echo "====="
